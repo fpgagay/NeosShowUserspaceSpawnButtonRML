@@ -21,12 +21,12 @@ outdir = "build"
 
 # Copy the compiled DLL to the plugins folder in mod package
 [[build.copy]]
-source = "ShowUserspaceSpawnButton/bin/Release/net9.0/ShowUserspaceSpawnButton.dll"
+source = "ShowUserspaceSpawnButton/bin/Release/net10.0/ShowUserspaceSpawnButton.dll"
 target = "plugins/"
 
 # Include PDB
 [[build.copy]]
-source = "ShowUserspaceSpawnButton/bin/Release/net9.0/ShowUserspaceSpawnButton.pdb"
+source = "ShowUserspaceSpawnButton/bin/Release/net10.0/ShowUserspaceSpawnButton.pdb"
 target = "plugins/"
 
 # include LICENSE file in mod package
