@@ -1,17 +1,17 @@
-﻿using BepInEx;
-using BepInEx.Logging;
-using BepInEx.NET.Common;
-using BepInExResoniteShim;
 using FrooxEngine;
 using HarmonyLib;
-using System.Reflection.Emit;
+using ResoniteModLoader;
+
 
 namespace ShowUserspaceSpawnButton
 {
-    [ResonitePlugin(PluginMetadata.GUID, PluginMetadata.NAME, PluginMetadata.VERSION, PluginMetadata.AUTHORS, PluginMetadata.REPOSITORY_URL)]
-    [BepInDependency(BepInExResoniteShim.PluginMetadata.GUID)]
-    public class ShowUserspaceSpawnButton : BasePlugin
+    public class ShowUserspaceSpawnButton : ResoniteMod
     {
+        internal const string VERSION_CONSTANT = "1.0.0"; //Changing the version here updates it in all locations needed
+    	public override string Name => "ShowUserspaceSpawnButton";
+    	public override string Author => "EIA485";
+    	public override string Version => VERSION_CONSTANT;
+    	public override string Link => "https://github.com/fpgagay/NeosShowUserspaceSpawnButtonRML/";
         static ManualLogSource log;
         public override void Load()
         {
