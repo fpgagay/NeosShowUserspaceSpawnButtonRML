@@ -1,7 +1,7 @@
 using FrooxEngine;
 using HarmonyLib;
 using ResoniteModLoader;
-
+using System.Reflection.Emit;
 
 namespace ShowUserspaceSpawnButton
 {
@@ -41,7 +41,7 @@ namespace ShowUserspaceSpawnButton
                         break; //only patch first occurrence
                     }
                 }
-                if (!patched) log.LogError("Transpiler failed on InventoryBrowser.OnItemSelected");
+                if (!patched) Msg("Transpiler failed on InventoryBrowser.OnItemSelected");
                 return codes.AsEnumerable();
             }
             [HarmonyPostfix]
