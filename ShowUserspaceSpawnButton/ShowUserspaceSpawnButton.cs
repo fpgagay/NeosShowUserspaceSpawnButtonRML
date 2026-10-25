@@ -29,7 +29,7 @@ namespace ShowUserspaceSpawnButton
                 {
                     if (codes[i].opcode == OpCodes.Ldloc_1 //currentType
                         && codes[i + 1].opcode == OpCodes.Ldc_I4_5 //SpecialItemType.Facet
-                        && codes[i + 5].opcode == OpCodes.Brfalse) 
+                        && codes[i + 5].opcode == OpCodes.Brfalse_S) 
                     {
                         //checking if item is null
                         codes[i] = new CodeInstruction(OpCodes.Ldloc_0);//load item ui
