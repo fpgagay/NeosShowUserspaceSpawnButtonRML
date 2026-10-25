@@ -12,14 +12,12 @@ namespace ShowUserspaceSpawnButton
     	public override string Author => "EIA485";
     	public override string Version => VERSION_CONSTANT;
     	public override string Link => "https://github.com/fpgagay/NeosShowUserspaceSpawnButtonRML/";
-        static ManualLogSource log;
-        public override void Load()
+        public override void OnEngineInit()
         {
-            log = Log;
-            HarmonyInstance.PatchAll();
+            Harmony harmony = new("com.EIA485.ShowUserspaceSpawnButton");
+    		harmony.PatchAll();
         }
-        public override bool Unload() { HarmonyInstance.UnpatchSelf(); return true; }
-
+        
         [HarmonyPatch(typeof(InventoryBrowser), "OnItemSelected")]
         class ShowUserspaceSpawnButtonPatch
         {
